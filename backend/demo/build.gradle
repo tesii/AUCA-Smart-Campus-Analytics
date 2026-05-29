@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'eclipse'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'jacoco'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://mavensync.zkoss.org/maven2"
+    }
+}
+
+dependencies {
+
+    // SPRING
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.security:spring-security-crypto'
+
+    // DATABASE
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // =========================
+    // ZK CORE (MATCHED VERSION)
+    // =========================
+    implementation 'org.zkoss.zk:zk:9.6.0.2'
+    implementation 'org.zkoss.zk:zul:9.6.0.2'
+    implementation 'org.zkoss.zk:zkplus:9.6.0.2'
+    implementation 'org.zkoss.zk:zkbind:9.6.0.2'
+
+    // =========================
+    // TESTING (ZATS FIXED)
+    // =========================
+   testImplementation 'org.zkoss.zats:zats-mimic:2.0.0'
+testImplementation 'org.zkoss.zats:zats-mimic-ext7:2.0.0'
+
+    // SPRING TEST
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        html.required = true
+        xml.required = true
+        csv.required = false
+    }
+}

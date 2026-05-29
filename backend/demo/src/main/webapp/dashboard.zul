@@ -1,0 +1,16 @@
+<window title="Admin Dashboard"
+        border="normal"
+        width="100%">
+
+    <vlayout>
+
+        <label value="Welcome to Smart Campus Dashboard" style="font-size:20px;" />
+
+        <button label="Manage Staff" />
+        <button label="Manage Departments" />
+        <button label="Manage Roles" />
+        <button label="View Analytics" />
+
+    </vlayout>
+
+</window>

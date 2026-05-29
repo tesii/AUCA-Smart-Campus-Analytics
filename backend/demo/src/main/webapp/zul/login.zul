@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <style src="/login.css"/>
+
+    <window apply="com.example.zk.controller.LoginController"
+            border="none"
+            width="100%"
+            height="100%"
+            sclass="login-window">
+
+        <hlayout width="100%" height="100%" sclass="login-container">
+
+            <!-- LEFT: FORM SECTION -->
+            <div sclass="login-form-section">
+
+                <div sclass="login-card">
+
+                    <!-- LOGO -->
+                    <div sclass="login-logo-wrap">
+                        <image src="/images/Advlogo.png" sclass="login-logo"/>
+                    </div>
+
+                    <!-- TITLE -->
+                  
+                    <!-- FORM -->
+                    <vlayout width="700px" spacing="70px" style="margin-top:120px;">
+<label value="Login" sclass="login-title"
+       style="font-weight:bold; color:#1976d2;"/>
+                        <!-- USERNAME -->
+                        <vlayout width="100%" spacing="30px">
+                   
+
+                            <label value="Username" sclass="form-label"/>
+                            <textbox id="username"
+                                     width="100%"
+                                     placeholder="Enter username or email"
+                                     sclass="form-input"/>
+                        </vlayout>
+
+                        <!-- PASSWORD -->
+                        <vlayout width="100%" spacing="4px">
+                            <label value="Password" sclass="form-label"/>
+                            <textbox id="password"
+                                     type="password"
+                                     width="100%"
+                                     placeholder="Enter password"
+                                     sclass="form-input"/>
+                        </vlayout>
+
+                        <!-- BUTTON -->
+                        <button id="loginBtn"
+                                label="Sign In"
+                                width="100%"
+                                sclass="btn-login"
+                                style="margin-top:8px;"/>
+
+                        <!-- ERROR -->
+                        <label id="message" sclass="login-error"/>
+
+                    </vlayout>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT: IMAGE SECTION -->
+            <div sclass="login-image-section">
+                <image src="/images/auca.jpg" sclass="side-image"/>
+            </div>
+
+        </hlayout>
+
+    </window>
+</zk>

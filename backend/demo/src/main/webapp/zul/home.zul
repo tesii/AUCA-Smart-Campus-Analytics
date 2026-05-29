@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window width="100%" height="100%"
+        border="none"
+        sclass="page-window"
+        apply="com.example.zk.controller.HomeController">
+
+    <style src="/css/app.css"/>
+
+    <borderlayout width="100%" height="100%">
+
+        <!-- ================= TOP BAR ================= -->
+        <north size="90px">
+
+            <div style="background:linear-gradient(90deg,#0d3b75,#1f6feb);
+                        color:white;padding:12px 20px;height:100%;">
+
+                <hbox width="100%" pack="justify" align="center">
+
+                    <hbox align="center" spacing="14px">
+
+                        <image src="/images/Advlogo.png" sclass="page-logo"/>
+
+                        <vbox spacing="2px">
+
+                            <label value="AUCA Smart Campus Dashboard"
+                                   style="font-size:17px;font-weight:bold;color:white"/>
+
+                            <label id="welcomeLabel"
+                                   value="Welcome"
+                                   style="font-size:12px;color:#dfe6ff"/>
+
+                        </vbox>
+
+                    </hbox>
+
+                    <hbox align="center" spacing="12px">
+
+                        <label id="userLabel"
+                               style="font-size:12px;color:#e6f0ff"/>
+
+                        <button id="logoutBtn"
+                                label="Logout"
+                                sclass="logout-btn"/>
+
+                    </hbox>
+
+                </hbox>
+
+            </div>
+
+        </north>
+
+        <!-- ================= SIDEBAR ================= -->
+        <west size="220px">
+
+            <vlayout style="background:#1f2d3d;height:100%;padding:12px"
+                     spacing="6px">
+
+                <label value="MAIN MENU"
+                       style="color:#9fb3c8;font-size:11px;margin-bottom:12px"/>
+
+                <button id="btnDashboard" label="Dashboard" width="100%" sclass="menu-btn"/>
+                <button id="btnAdmins" label="Admins" width="100%" sclass="menu-btn"/>
+                <button id="btnDepartments" label="Departments" width="100%" sclass="menu-btn"/>
+                <button id="btnRoles" label="Roles" width="100%" sclass="menu-btn"/>
+                <button id="btnStaff" label="Staff" width="100%" sclass="menu-btn"/>
+                <button id="btnReports" label="Reports" width="100%" sclass="menu-btn"/>
+
+            </vlayout>
+
+        </west>
+
+        <!-- ================= CONTENT AREA ================= -->
+        <center>
+
+            <div id="contentArea"
+                 style="padding:22px;
+                        background:#f5f7fb;
+                        height:100%;
+                        overflow:auto;">
+
+                <!-- ================= WELCOME ================= -->
+                <div style="font-size:22px;font-weight:bold;color:#2c3e50;">
+                    System Overview
+                </div>
+
+                <div style="margin-top:8px;color:#7f8c8d;font-size:13px;">
+                    Real-time system statistics
+                </div>
+
+                <!-- ================= STATS CARDS ================= -->
+                <hbox spacing="20px" style="margin-top:20px;" width="100%">
+
+                    <!-- STAFF -->
+                    <div style="flex:1;background:white;padding:15px;border-radius:10px;
+                                box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                        <label value="Total Staff" style="font-weight:bold;"/>
+                        <separator/>
+                        <label id="staffCount" value="0"
+                               style="font-size:22px;color:#0d3b75;"/>
+                    </div>
+
+                    <!-- ACTIVE STAFF -->
+                    <div style="flex:1;background:white;padding:15px;border-radius:10px;
+                                box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                        <label value="Active Staff" style="font-weight:bold;"/>
+                        <separator/>
+                        <label id="activeStaffCount" value="0"
+                               style="font-size:22px;color:#27ae60;"/>
+                    </div>
+
+                    <!-- DEPARTMENTS -->
+                    <div style="flex:1;background:white;padding:15px;border-radius:10px;
+                                box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                        <label value="Departments" style="font-weight:bold;"/>
+                        <separator/>
+                        <label id="deptCount" value="0"
+                               style="font-size:22px;color:#8e44ad;"/>
+                    </div>
+
+                    <!-- ROLES -->
+                    <div style="flex:1;background:white;padding:15px;border-radius:10px;
+                                box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                        <label value="Roles" style="font-weight:bold;"/>
+                        <separator/>
+                        <label id="roleCount" value="0"
+                               style="font-size:22px;color:#e67e22;"/>
+                    </div>
+
+                </hbox>
+
+                <!-- ================= SECOND ROW ================= -->
+                <hbox spacing="20px" style="margin-top:20px;" width="100%">
+
+                    <!-- REQUESTS -->
+                    <div style="flex:1;background:white;padding:15px;border-radius:10px;
+                                box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                        <label value="Total Requests" style="font-weight:bold;"/>
+                        <separator/>
+                        <label id="requestCount" value="0"
+                               style="font-size:22px;color:#2980b9;"/>
+                    </div>
+
+                    <!-- PENDING -->
+                    <div style="flex:1;background:white;padding:15px;border-radius:10px;
+                                box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+                        <label value="Pending Requests" style="font-weight:bold;"/>
+                        <separator/>
+                        <label id="pendingRequestCount" value="0"
+                               style="font-size:22px;color:#e74c3c;"/>
+                    </div>
+
+                </hbox>
+
+            </div>
+
+        </center>
+
+    </borderlayout>
+
+</window>

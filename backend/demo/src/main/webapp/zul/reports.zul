@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window apply="com.example.zk.controller.RequestsController"
+        title="Request Analytics Dashboard"
+        border="none"
+        width="100%"
+        style="padding:18px"
+        sclass="page-window">
+
+    <style src="/app.css"/>
+  <vlayout width="100%" class="page-header-bar">
+        <image src="/images/Advlogo.png" sclass="page-logo"/>
+       
+    </vlayout>
+    <vlayout width="100%" spacing="18px">
+
+        <!-- HEADER -->
+        <label value="Smart Campus Request Analytics" sclass="page-header"/>
+
+        <!-- STAT CARDS ROW -->
+        <hlayout width="100%" spacing="14px">
+
+            <hlayout sclass="stat-box" spacing="8px">
+                <label value="Total Requests" sclass="stat-label"/>
+                <label id="totalRequestsLabel" value="0" sclass="stat-value"/>
+            </hlayout>
+
+            <hlayout sclass="stat-box" spacing="8px">
+                <label value="Successful" sclass="stat-label"/>
+                <label id="successRequestsLabel" value="0" sclass="stat-value"/>
+            </hlayout>
+
+            <hlayout sclass="stat-box" spacing="8px">
+                <label value="No Result" sclass="stat-label"/>
+                <label id="noResponseRequestsLabel" value="0" sclass="stat-value"/>
+            </hlayout>
+
+            <hlayout sclass="stat-box" spacing="8px">
+                <label value="Greetings" sclass="stat-label"/>
+                <label id="greetingRequestsLabel" value="0" sclass="stat-value"/>
+            </hlayout>
+
+            <hlayout sclass="stat-box" spacing="8px">
+                <label value="Breakdown" sclass="stat-label"/>
+                <label id="statusBreakdownLabel" value="loading..." sclass="stat-breakdown"/>
+            </hlayout>
+
+        </hlayout>
+
+        <!-- TABBOX -->
+        <tabbox width="100%" sclass="page-card">
+
+            <tabs>
+                <tab label="Metrics"          sclass="page-tab"/>
+                <tab label="Recent Requests"  sclass="page-tab"/>
+            </tabs>
+
+            <tabpanels>
+
+                <!-- TAB 1: METRICS TABLE -->
+                <tabpanel style="padding:16px">
+
+                    <vbox width="100%" spacing="10px">
+
+                        <label value="Summary Metrics" sclass="section-title"/>
+
+                        <listbox id="metricsTable" width="100%">
+                            <listhead>
+                                <listheader label="Metric"     width="40%"/>
+                                <listheader label="Count"      width="30%"/>
+                                <listheader label="Percentage" width="30%"/>
+                            </listhead>
+                        </listbox>
+
+                    </vbox>
+
+                </tabpanel>
+
+                <!-- TAB 2: REQUESTS TABLE -->
+                <tabpanel style="padding:16px">
+
+                    <vbox width="100%" spacing="10px">
+
+                        <label value="Recent Requests" sclass="section-title"/>
+
+                        <!-- CREATE FORM -->
+                        <hbox width="100%" spacing="10px">
+                            <textbox id="titleBox"         placeholder="Title"       hflex="1"/>
+                            <textbox id="descriptionBox"   placeholder="Description" hflex="2"/>
+                            <button  id="createRequestBtn" label="Add Request"       sclass="btn-create"/>
+                        </hbox>
+
+                        <!-- DATA TABLE -->
+                        <listbox id="requestList"
+                                 width="100%"
+                                 mold="paging"
+                                 pageSize="5">
+
+                            <listhead>
+                                <listheader label="ID"          width="8%"/>
+                                <listheader label="Title"       width="22%"/>
+                                <listheader label="Description" width="40%"/>
+                                <listheader label="Status"      width="18%"/>
+                                <listheader label="Action"      width="12%"/>
+                            </listhead>
+
+                        </listbox>
+
+                    </vbox>
+
+                </tabpanel>
+
+            </tabpanels>
+
+        </tabbox>
+
+    </vlayout>
+</window>

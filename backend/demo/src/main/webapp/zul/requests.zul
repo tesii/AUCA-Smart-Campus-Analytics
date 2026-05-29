@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window apply="com.example.zk.controller.RequestsController"
+        title="Requests"
+        border="none"
+        width="100%"
+        height="100%"
+        style="padding:18px"
+        sclass="page-window">
+    <style src="/css/app.css"/>
+
+    <vlayout width="100%" class="page-header-bar">
+        <image src="/images/Advlogo.png" sclass="page-logo"/>
+        <label value="Requests" class="page-title"/>
+    </vlayout>
+
+    <vlayout width="100%" spacing="18px">
+
+        <hlayout width="100%" spacing="18px" style="align-items:flex-start;">
+            <vbox width="60%" class="page-card" spacing="12px">
+                <label value="Request Records" class="section-title"/>
+                <listbox id="requestList" width="100%" height="360px" mold="paging" pageSize="10" sclass="data-table">
+                    <listhead>
+                        <listheader label="ID" width="12%"/>
+                        <listheader label="Title" width="28%"/>
+                        <listheader label="Description" width="40%"/>
+                        <listheader label="Status" width="20%"/>
+                    </listhead>
+                </listbox>
+            </vbox>
+
+            <vbox width="40%" class="page-card" spacing="14px">
+                <label value="Create Request" class="section-title"/>
+                <grid width="100%">
+                    <rows>
+                        <row>
+                            <label value="Title" width="120px"/>
+                            <textbox id="titleBox" hflex="1" placeholder="Request title"/>
+                        </row>
+                        <row>
+                            <label value="Description" width="120px"/>
+                            <textbox id="descriptionBox" hflex="1" placeholder="Request description" multiline="true" height="120px"/>
+                        </row>
+                    </rows>
+                </grid>
+                <button id="createRequestBtn" label="Create Request" width="100%" class="primary"/>
+            </vbox>
+        </hlayout>
+    </vlayout>
+</window>

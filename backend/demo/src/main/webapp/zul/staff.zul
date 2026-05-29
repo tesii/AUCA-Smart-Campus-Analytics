@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window apply="com.example.zk.controller.StaffController"
+        title="Staff"
+        border="none"
+        width="100%"
+        style="padding:18px"
+        sclass="page-window">
+
+    <style src="/css/app.css"/>
+  <vlayout width="100%" class="page-header-bar">
+        <image src="/images/Advlogo.png" sclass="page-logo"/>
+     
+    </vlayout>
+
+    <vlayout width="100%" spacing="18px">
+
+        <!-- HEADER -->
+        <label value="Staff Management" sclass="page-header"/>
+
+        <hlayout width="100%" spacing="18px" style="align-items:flex-start;">
+
+            <!-- LEFT: STAFF TABLE -->
+            <vbox width="60%" sclass="page-card" spacing="12px">
+
+                <label value="Staff Records" sclass="section-title"/>
+
+                <listbox id="staffList"
+                         width="100%"
+                         mold="paging"
+                         pageSize="10"
+                         sclass="data-table">
+
+                    <listhead>
+                        <listheader label="ID"         width="7%"/>
+                        <listheader label="Staff Code" width="12%"/>
+                        <listheader label="Full Name"  width="16%"/>
+                        <listheader label="Email"      width="18%"/>
+                        <listheader label="Phone"      width="13%"/>
+                        <listheader label="Department" width="13%"/>
+                        <listheader label="Role"       width="11%"/>
+                        <listheader label="Action"     width="10%"/>
+                    </listhead>
+
+                </listbox>
+
+            </vbox>
+
+            <!-- RIGHT: CREATE FORM -->
+            <vbox width="40%" sclass="page-card" spacing="14px">
+
+                <label value="Create Staff" sclass="section-title"/>
+
+                <grid width="100%">
+                    <rows>
+                        <row>
+                            <label value="Staff Code" sclass="form-label"/>
+                            <textbox id="codeBox"  hflex="1" placeholder="Staff code"/>
+                        </row>
+                        <row>
+                            <label value="Full Name" sclass="form-label"/>
+                            <textbox id="nameBox"  hflex="1" placeholder="Full name"/>
+                        </row>
+                        <row>
+                            <label value="Email" sclass="form-label"/>
+                            <textbox id="emailBox" hflex="1" placeholder="Email address"/>
+                        </row>
+                        <row>
+                            <label value="Phone" sclass="form-label"/>
+                            <textbox id="phoneBox" hflex="1" placeholder="Phone number"/>
+                        </row>
+                        <row>
+                            <label value="Department" sclass="form-label"/>
+                            <combobox id="deptCombo" hflex="1" placeholder="Choose department"/>
+                        </row>
+                        <row>
+                            <label value="Role" sclass="form-label"/>
+                            <combobox id="roleCombo" hflex="1" placeholder="Choose role"/>
+                        </row>
+                    </rows>
+                </grid>
+
+                <button id="createStaffBtn" label="Create Staff" width="100%" sclass="btn-create"/>
+
+            </vbox>
+
+        </hlayout>
+
+    </vlayout>
+</window>
